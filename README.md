@@ -1,38 +1,97 @@
-# <h1 align="center"> Forge Template </h1>
+## Foundry
 
-**Template repository for getting started quickly with Foundry projects**
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-![Github Actions](https://github.com/foundry-rs/forge-template/workflows/CI/badge.svg)
+## ENVIRONMENT VARIABLES
 
-## Getting Started
-
-Click "Use this template" on [GitHub](https://github.com/foundry-rs/forge-template) to create a new repository with this repo as the initial state.
-
-Or, if your repo already exists, run:
-```sh
-forge init
-forge build
-forge test
+### FROM TERMINAL, WE WANT FORGE TO REFER TO OUR .ENV FILE. TO DO THIS:
+```shell
+$ source .env
 ```
 
-## Writing your first test
 
-All you need is to `import forge-std/Test.sol` and then inherit it from your test contract. Forge-std's Test contract comes with a pre-instatiated [cheatcodes environment](https://book.getfoundry.sh/cheatcodes/), the `vm`. It also has support for [ds-test](https://book.getfoundry.sh/reference/ds-test.html)-style logs and assertions. Finally, it supports Hardhat's [console.log](https://github.com/brockelmore/forge-std/blob/master/src/console.sol). The logging functionalities require `-vvvv`.
+Foundry consists of:
 
-```solidity
-pragma solidity 0.8.10;
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-import "forge-std/Test.sol";
+## Documentation
 
-contract ContractTest is Test {
-    function testExample() public {
-        vm.roll(100);
-        console.log(1);
-        emit log("hi");
-        assertTrue(true);
-    }
-}
+https://book.getfoundry.sh/
+
+## Usage
+
+### Build
+
+```shell
+$ forge build
 ```
+
+### Test
+
+```shell
+$ forge test
+```
+
+### Format
+
+```shell
+$ forge fmt
+```
+
+### Gas Snapshots
+
+```shell
+$ forge snapshot
+```
+
+### Anvil
+
+```shell
+$ anvil
+```
+
+### Deploy
+
+```shell
+$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+
+## Cast
+
+```shell
+$ cast <subcommand>
+```
+
+### Cast Function Signature
+
+- Will return hexadecimal value
+- Allows to check that we are doing what we expect to be doing- e.g check hex data in metamask against the hex value of function name to verify correct function is being called
+
+```shell
+$ cast sig "functionName()"
+```
+
+### Cast Using CallData Decode
+
+- This is used to achieve the same goal of 'cast sig', however, this is used for functions that have parameters which makes the hex string much larger
+- This would return what each of the parameters are for the function
+
+```shell
+$ cast --calldata-decode "functionName()" HexString(e.g.2a4d5b etc etc)
+```
+
+
+### Help
+
+```shell
+$ forge --help
+$ anvil --help
+$ cast --help
+```
+
 
 ## Development
 
