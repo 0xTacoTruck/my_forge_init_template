@@ -3,13 +3,13 @@ pragma solidity ^0.8.18;
 
 import "forge-std/Test.sol";
 
-import "src/Contract.sol";
+import "src/DemoContract.sol";
 
 contract TestContract is Test {
-    Contract c;
+    DemoContract c;
 
     function setUp() public {
-        c = new Contract();
+        c = new DemoContract();
     }
 
     function testBar() public {
