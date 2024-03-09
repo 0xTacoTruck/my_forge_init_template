@@ -8,7 +8,24 @@ fs :; forge snapshot
 
 format :; forge fmt
 
-install-std :; forge install https://github.com/foundry-rs/forge-std.git --no-commit
+install-std:
+	@forge install foundry-rs/forge-std --no-commit
+
+install-solmate:
+	@forge install transmissions11/solmate --no-commit
+
+install-oz:
+	@forge install OpenZeppelin/openzeppelin-contracts --no-commit
+
+install-devtools:
+	@forge install Cyfrin/foundry-devops --no-commit
+
+install-cl:
+	@forge install smartcontractkit/chainlink-brownie-contracts --no-commit
+
+install-base:
+	@forge install foundry-rs/forge-std --no-commit && @forge install Cyfrin/foundry-devops --no-commit --no-commit && @forge install OpenZeppelin/openzeppelin-contracts --no-commit
+
 
 # Clean the repo
 clean  :; forge clean
