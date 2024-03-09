@@ -9,7 +9,13 @@ Foundry consists of:
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
 -   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-  ## ENVIRONMENT VARIABLES
+  
+# LESSON NOTES
+
+My notes taken during this course can be found in the Notes.md file of this repository.
+
+
+## ENVIRONMENT VARIABLES
 
 ### FROM TERMINAL, WE WANT FORGE TO REFER TO OUR .ENV FILE. TO DO THIS:
 ```shell
