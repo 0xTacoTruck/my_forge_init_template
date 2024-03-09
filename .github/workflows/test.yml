@@ -26,6 +26,11 @@ jobs:
           run: 
             forge install
           id: install
+          
+        - name: Install forge-std
+          run: 
+            forge install https://github.com/foundry-rs/forge-std.git --no-commit
+          id: forge-std
   
         - name: Check gas snapshots
           run: 
