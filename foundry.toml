@@ -10,5 +10,7 @@ remappings = [
 "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
 ]
 
+#Force foundry to use the remappings in the foundry.toml file or remappings.txt
+auto_detect_remappings = false
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
