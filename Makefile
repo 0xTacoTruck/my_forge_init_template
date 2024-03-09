@@ -8,6 +8,8 @@ fs :; forge snapshot
 
 format :; forge fmt
 
+install-std :; forge install https://github.com/foundry-rs/forge-std.git --no-commit
+
 # Clean the repo
 clean  :; forge clean
 
@@ -42,3 +44,4 @@ fund:
 
 withdraw:
 	@forge script script/Interactions.s.sol:WithdrawFundMe $(NETWORK_ARGS)
+
