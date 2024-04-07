@@ -25,4 +25,14 @@ fs_permissions = [
 [fuzz]
 runs = 1000
 
+# Set invariant testing options - depth is the number of calls in a single run
+# Fail on revert can make it super easy to get up and running, however, there is risk of just going test to test and reverting -
+#-everytime and not diving deeper because the calls we are making don't make sense. 
+# An example might be passing random address inputs to a function that don't make sense and therefore we don't actually get into the fucntion itself
+[invariant]
+runs = 128
+depth = 50
+fail_on_revert = true
+
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
