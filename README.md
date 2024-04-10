@@ -15,18 +15,18 @@ Foundry consists of:
 My notes taken during this course can be found in the Notes.md file of this repository.
 
 
-## ENVIRONMENT VARIABLES
+## Environment Variables Usage
 
-### FROM TERMINAL, WE WANT FORGE TO REFER TO OUR .ENV FILE. TO DO THIS:
+From the terminal, we wanto forge to use our .env file of variables, to do that - run the following command:
 ```shell
 $ source .env
 ```
 
-## Documentation
+## Foundry Documentation
 
-https://book.getfoundry.sh/
+This project uses [Foundry](https://getfoundry.sh). See the [book](https://book.getfoundry.sh/getting-started/installation.html) for instructions on how to install and use Foundry.
 
-## Usage
+## Foundry Usage
 
 ### Build
 
@@ -97,7 +97,3 @@ $ anvil --help
 $ cast --help
 ```
 
-
-## Development
-
-This project uses [Foundry](https://getfoundry.sh). See the [book](https://book.getfoundry.sh/getting-started/installation.html) for instructions on how to install and use Foundry.
