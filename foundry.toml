@@ -34,5 +34,12 @@ runs = 128
 depth = 50
 fail_on_revert = true
 
+# RPC URL aliases - alias on left, value on right
+# Can also refer to environment variables
+# EXAMPLES ONLY - UPDATE WITH PROJECT
+[rpc_endpoints]
+optimism = "https://optimism.alchemyapi.io/v2/..."
+mainnet = "${RPC_MAINNET}" 
+
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
