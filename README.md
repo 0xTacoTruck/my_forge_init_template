@@ -14,6 +14,24 @@ Foundry consists of:
 
 My notes taken during this course can be found in the Notes.md file of this repository.
 
+# Set Up for GitHub Repo
+```
+…or create a new repository on the command line
+echo "# NAME OF TOKEN" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/GITHUB_USERNAME/NAME_OF_REPO.git
+git push -u origin main
+```
+```
+…or push an existing repository from the command line
+git remote add origin https://github.com/GITHUB_USERNAME/NAME_OF_REPO.git
+git branch -M main
+git push -u origin main
+```
+
 
 ## Environment Variables Usage
 
