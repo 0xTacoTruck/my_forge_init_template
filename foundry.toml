@@ -21,9 +21,6 @@ fs_permissions = [
     { access = "read", path = "./"},
 ]
 
-# Change the number of desired runs for fuzzing tests
-[fuzz]
-runs = 1000
 
 # Set invariant testing options - depth is the number of calls in a single run
 # Fail on revert can make it super easy to get up and running, however, there is risk of just going test to test and reverting -
@@ -36,10 +33,44 @@ fail_on_revert = true
 
 # RPC URL aliases - alias on left, value on right
 # Can also refer to environment variables
+# example:
+# zksync = "https://mainnet.era.zksync.io"
 # EXAMPLES ONLY - UPDATE WITH PROJECT
 [rpc_endpoints]
 optimism = "https://optimism.alchemyapi.io/v2/..."
 mainnet = "${RPC_MAINNET}" 
+
+[fuzz]
+runs = 1000
+max_test_rejects = 65536
+seed = '0x1'
+dictionary_weight = 40
+include_storage = true
+include_push_bytes = true
+extra_output = ["storageLayout", "metadata"]
+
+
+[fmt]
+bracket_spacing = true
+int_types = "long"
+line_length = 120
+multiline_func_header = "all"
+number_underscore = "thousands"
+quote_style = "double"
+tab_width = 4
+wrap_comments = true
+
+[etherscan]
+# zksync = no keey needed for zksync
+arbitrum = { key = "${API_KEY_ARBISCAN}" }
+avalanche = { key = "${API_KEY_SNOWTRACE}" }
+bnb_smart_chain = { key = "${API_KEY_BSCSCAN}" }
+gnosis_chain = { key = "${API_KEY_GNOSISSCAN}" }
+goerli = { key = "${API_KEY_ETHERSCAN}" }
+mainnet = { key = "${API_KEY_ETHERSCAN}" }
+optimism = { key = "${API_KEY_OPTIMISTIC_ETHERSCAN}" }
+polygon = { key = "${API_KEY_POLYGONSCAN}" }
+sepolia = { key = "${API_KEY_ETHERSCAN}" }
 
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
