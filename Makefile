@@ -69,8 +69,6 @@ ifeq ($(findstring --network sepolia,$(ARGS)),--network sepolia)
 	NETWORK_ARGS := --rpc-url $(SEPOLIA_RPC_URL) --private-key $(PRIVATE_KEY) --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
 endif
 
-anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
-
 
 fund:
 	@forge script script/Interactions.s.sol:FundFundMe $(NETWORK_ARGS)
