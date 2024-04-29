@@ -1,12 +1,35 @@
 -include .env
 
-fb:;	forge build
+.PHONY: all test clean deploy fund help install snapshot format anvil scopefile
 
-ft :; forge test 
+DEFAULT_ANVIL_KEY := 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 
-fs :; forge snapshot
+all: remove install build
+
+# Clean the repo
+clean  :; forge clean
+
+# Remove modules
+remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
+
+install :; forge install foundry-rs/forge-std --no-commit && forge install openzeppelin/openzeppelin-contracts --no-commit
+
+# Update Dependencies
+update:; forge update
+
+build:; forge build
+
+test :; forge test 
+
+snapshot :; forge snapshot
 
 format :; forge fmt
+
+anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
+
+slither :; slither . --config-file slither.config.json --checklist 
+
+aderyn :; aderyn .
 
 install-std:
 	@forge install foundry-rs/forge-std --no-commit
@@ -29,10 +52,6 @@ install-cl:
 install-base:
 	@forge install foundry-rs/forge-std --no-commit && @forge install Cyfrin/foundry-devops --no-commit --no-commit && @forge install OpenZeppelin/openzeppelin-contracts --no-commit && @forge install OpenZeppelin/openzeppelin-contracts-upgradeable --no-commit
 
-
-# Clean the repo
-clean  :; forge clean
-
 dp-sepolia:
 	forge script script/DeployFundMe.s.sol:DeployFundMe --rpc-url $(SEPOLIA_ALCHEMY_RPC_URL) --private-key $(SEPOLIA_METAMASK_PRIVATE_KEY) --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
 
@@ -42,8 +61,7 @@ help:
 	@echo ""
 	@echo "  make fund [ARGS=...]\n    example: make deploy ARGS=\"--network sepolia\""
 
-fund:
-	@forge script script/Interactions.s.sol:FundFundMe $(NETWORK_ARGS)
+
 
 NETWORK_ARGS := --rpc-url $(ANVIL_RPC_URL) --private-key $(ANVIL_0_PRIVATE_KEY) --broadcast
 
@@ -53,11 +71,6 @@ endif
 
 anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
 
-# Update Dependencies
-update:; forge update
-
-deploy:
-	@forge script script/DeployFundMe.s.sol:DeployFundMe $(NETWORK_ARGS)
 
 fund:
 	@forge script script/Interactions.s.sol:FundFundMe $(NETWORK_ARGS)
