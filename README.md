@@ -58,6 +58,12 @@ $ forge build
 $ forge test
 ```
 
+### Easy Testing with fork of mainnet
+
+```shell
+forge test -vvv --fork-url https://eth.drpc.org --fork-block-number 15969633
+```
+
 ### Format
 
 ```shell
