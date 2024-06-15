@@ -1,23 +1,24 @@
-# Foundry
+# Project / Lesson Name
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Lesson Notes (If applicable)
 
-Foundry consists of:
+My notes taken during this course can be found in the ***Notes.md*** file of this repository.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+# Lesson Exercises & Test Results (If applicable)
 
-  
-# LESSON NOTES
+## Exercise 1 - Description
 
-My notes taken during this course can be found in the Notes.md file of this repository.
+## Exercise 2 - Description
 
-# Set Up for GitHub Repo
+## Exercise 3 - Description
+
+# General Foundry and Project Set-Up Information
+
+## Set Up for new GitHub Repo
+
 ```
 …or create a new repository on the command line
-echo "# NAME OF TOKEN" >> README.md
+echo "# EXAMPLE" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
@@ -32,6 +33,16 @@ git branch -M main
 git push -u origin main
 ```
 
+## Foundry Overview and Tips
+
+**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+
+Foundry consists of:
+
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+-   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
 ## Environment Variables Usage
 
@@ -88,7 +99,7 @@ $ anvil
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 
-## Cast
+### Cast
 
 ```shell
 $ cast <subcommand>
@@ -111,7 +122,6 @@ $ cast sig "functionName()"
 ```shell
 $ cast --calldata-decode "functionName()" HexString(e.g.2a4d5b etc etc)
 ```
-
 
 ### Help
 
