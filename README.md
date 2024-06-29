@@ -93,6 +93,14 @@ $ forge snapshot
 $ anvil
 ```
 
+**Creating a local Anvil chain that you can interact with that is a fork of a chain:**
+
+```shell
+anvil --fork-url https://sepolia.drpc.org --fork-block-number 5781872
+```
+
+This will allow us to have tests run locally on a fork, allow you to use Foundry's `cast` command and all it's tools to interact with it. Really easy to do an super cool!
+
 ### Deploy
 
 ```shell
