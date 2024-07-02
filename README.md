@@ -46,7 +46,7 @@ Foundry consists of:
 
 ## Environment Variables Usage
 
-From the terminal, we wanto forge to use our .env file of variables, to do that - run the following command:
+From the terminal, we probably want forge to use our `.env` file of variables, to do that - run the following command:
 ```shell
 $ source .env
 ```
