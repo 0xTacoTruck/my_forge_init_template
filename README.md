@@ -1,5 +1,9 @@
 # Project / Lesson Name
 
+# QUICK SET UP NOTE
+
+to use latest forge-std run 'git submodule update --remote'
+
 # Lesson Notes (If applicable)
 
 My notes taken during this course can be found in the ***Notes.md*** file of this repository.
