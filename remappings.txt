@@ -2,5 +2,6 @@ ds-test/=lib/forge-std/lib/ds-test/src/
 forge-std/=lib/forge-std/src/
 @chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/
 @chainlink-ccip/contracts/src/=lib/chainlink/contracts/src/
+@chainlink/local/=lib/chainlink-local/
 @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
 @solmate/=lib/solmate/src/
