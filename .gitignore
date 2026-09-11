@@ -2,6 +2,10 @@
 cache/
 out/
 
+# Commonly ignored directories
+.logs/
+.ignore/
+
 # Ignores development broadcast logs
 !/broadcast
 /broadcast/*/31337/
@@ -12,6 +16,8 @@ docs/
 
 # Dotenv file
 .env
+.env.*
+!.env.example
 
 # Chainlink folder
 lib/chainlink-brownie-contracts/
@@ -19,5 +25,5 @@ lib/chainlink-brownie-contracts/
 # Devops folder
 lib/foundry-devops/
 
-#Open Zeppelin contracts
+# Open Zeppelin contracts
 lib/openzeppelin-contracts

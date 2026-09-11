@@ -4,6 +4,9 @@ out = "out"
 libs = ["lib"]
 ffi = false
 
+# Compiler outputs included in the artifact (project-level, not fuzz-scoped)
+extra_output = ["storageLayout", "metadata"]
+
 remappings = [
 "ds-test/=lib/forge-std/lib/ds-test/src/",
 "forge-std/=lib/forge-std/src/",
@@ -41,6 +44,7 @@ fail_on_revert = true
 [rpc_endpoints]
 optimism = "https://optimism.alchemyapi.io/v2/..."
 mainnet = "${RPC_MAINNET}" 
+sepolia = "https://eth-sepolia.public.blastapi.io"
 
 [fuzz]
 runs = 1000
@@ -49,7 +53,6 @@ seed = '0x1'
 dictionary_weight = 40
 include_storage = true
 include_push_bytes = true
-extra_output = ["storageLayout", "metadata"]
 
 
 [fmt]

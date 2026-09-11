@@ -1,49 +1,35 @@
-name: test
-on: workflow_dispatch
-  
+name: CI
 
-env:
-  FOUNDRY_PROFILE: ci
+permissions: {}
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   check:
-      strategy:
-        fail-fast: true
-        
-      name: Foundry Project
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            submodules: recursive
-  
-        - name: Install Foundry
-          uses: foundry-rs/foundry-toolchain@v1
-          with:
-            version: nightly
-  
-        - name: Install deps
-          run: 
-            forge install
-          id: install
-          
-        - name: Install forge-std
-          run: 
-            forge install https://github.com/foundry-rs/forge-std.git --no-commit
-          id: forge-std
-  
-        - name: Check gas snapshots
-          run: 
-            forge snapshot
-          id: snapshot
-  
-        - name: Run tests
-          run: 
-            forge test -vvv
-          id: test
+    name: Foundry project
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+          submodules: recursive
 
-        - name: Run Forge build
-          run: |
-            forge --version
-            forge build --sizes
-          id: build
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Show Forge version
+        run: forge --version
+
+      - name: Run Forge fmt
+        run: forge fmt --check
+
+      - name: Run Forge build
+        run: forge build --sizes
+
+      - name: Run Forge tests
+        run: forge test -vvv
