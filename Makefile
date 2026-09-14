@@ -47,7 +47,7 @@ install-devtools:
 	@forge install Cyfrin/foundry-devops --no-commit
 
 install-cl:
-	@forge install smartcontractkit/chainlink-brownie-contracts --no-commit
+	@forge install smartcontractkit/chainlink-evm --no-commit
 
 install-base:
 	@forge install foundry-rs/forge-std --no-commit && @forge install Cyfrin/foundry-devops --no-commit --no-commit && @forge install OpenZeppelin/openzeppelin-contracts --no-commit && @forge install OpenZeppelin/openzeppelin-contracts-upgradeable --no-commit
