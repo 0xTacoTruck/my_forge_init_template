@@ -20,7 +20,7 @@ docs/
 !.env.example
 
 # Chainlink folder
-lib/chainlink-brownie-contracts/
+lib/chainlink-evm/
 
 # Devops folder
 lib/foundry-devops/
